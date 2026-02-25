@@ -1,0 +1,144 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+  --accent: var(--brown-800);
+  --page-bg: var(--stone-100);
+  --title-font: 'Young Serif', serif;
+  --body-font: 'Outfit', sans-serif;
+}
+
+/* --- DISEÑO MÓVIL (Base) --- */
+body {
+  background-color: var(--white); /* En móvil todo es blanco */
+  font-family: var(--body-font);
+  margin: 0;
+  padding: 0; 
+}
+
+.recipe-container {
+  background-color: var(--white);
+  width: 100%;
+  height: auto;
+  padding:0;
+}
+
+.hero-image {
+  width: 100%;
+  display: block;
+  border-radius: 0; 
+  margin-bottom: 40px;
+}
+
+/* Agregamos el header para que el texto inicial tenga margen */
+header, .ingredients, .instructions, .nutrition {
+  padding: 0 32px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-family: var(--title-font);
+  color: var(--stone-900);
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+/* Estilo para los subtítulos de cada sección */
+h2 {
+  font-family: var(--title-font);
+  color: var(--brown-800);
+  margin-bottom: 24px;
+}
+
+/* Estilo para el párrafo de introducción */
+header p {
+  color: var(--stone-600);
+  line-height: 1.5;
+}
+
+.prep-box {
+  background-color: var(--rose-50);
+  margin: 32px;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* Estilo para el título de la caja rosa */
+.prep-box h3 {
+  color: var(--rose-800);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+li::marker {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+li {
+  padding-left: 16px;
+  margin-bottom: 8px;
+  color: var(--stone-600);
+  line-height: 1.5;
+}
+
+/* Líneas divisorias (HR) */
+hr {
+  border: 0;
+  border-top: 1px solid var(--stone-150);
+  margin-bottom: 32px;
+}
+
+.nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--stone-150);
+}
+
+.nutrition-row:last-child {
+  border-bottom: none;
+}
+
+.nutrition-row .value {
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+/* --- DISEÑO ESCRITORIO (768px+) --- */
+@media (min-width: 768px) {
+  body {
+    background-color: var(--stone-100); /* Aparece el fondo crema */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px; /* Más espacio arriba y abajo en PC */
+    min-height: 100vh;
+  }
+
+  .recipe-container {
+    max-width: 736px;
+    padding: 40px; /* En PC el texto respira dentro de la tarjeta */
+    border-radius: 24px;
+  }
+
+  .hero-image {
+    border-radius: 12px; /* La imagen se vuelve redondeada en PC */
+  }
+
+  /* Quitamos el padding extra de las secciones porque ya lo da la tarjeta */
+  header, .ingredients, .instructions, .nutrition {
+    padding: 0; 
+  }
+
+  .prep-box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
